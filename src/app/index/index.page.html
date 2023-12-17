@@ -1,0 +1,171 @@
+<ion-app>
+
+  <div class="bg-info">
+
+    <ion-menu contentId="main-content" side="start" type="overlay">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title class="ion-text-center">Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="menu-lateral">
+          <ion-list class="menu" color="primary" lines="none" class=" ion-padding">
+            <ion-item class="" (click)="showContent('home'); closeMenu()" lines="none">
+              <ion-icon class="" slot="start" name="home"></ion-icon>
+              <ion-label class=" ion-padding-top">Home</ion-label>
+            </ion-item>
+            <ion-item (click)="showContent('alunos'); closeMenu()" lines="none">
+              <ion-icon slot="start" name="person"></ion-icon>
+              <ion-label class="ion-padding-top">Ver Alunos</ion-label>
+            </ion-item>
+            <ion-item (click)="showContent('funcionarios'); closeMenu()" lines="none">
+              <ion-icon slot="start" name="business"></ion-icon>
+              <ion-label class="ion-padding-top">Ver Funcionários</ion-label>
+            </ion-item>
+            <ion-item (click)="showContent('entradas'); closeMenu()" lines="none">
+              <ion-icon slot="start" name="time"></ion-icon>
+              <ion-label class="ion-padding-top">Ver Entradas</ion-label>
+            </ion-item>
+            <ion-item (click)="showContent('planos'); closeMenu()" lines="none">
+              <ion-icon slot="start" name="document-text"></ion-icon>
+              <ion-label class="ion-padding-top">Ver Planos</ion-label>
+            </ion-item>
+
+            <ion-item (click)="logout()" lines="none">
+              <ion-icon slot="start" name="log-out"></ion-icon>
+              <ion-label class="ion-padding-top">Logout</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-content>
+
+    </ion-menu>
+
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar color="primary" class=" azul-claro">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title class="text-center titulo">Sistema de Gerenciamento</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content [fullscreen]="true" class="ion-padding">
+
+        <div class="ion-text-center centro" *ngIf="currentContent === 'default'" class="home-container">
+          <ion-icon name="home" size="large" class="home-icon"></ion-icon>
+        </div>
+
+        <div *ngIf="currentContent === 'home'" class="home-container">
+          <ion-icon name="home" class="home-icon" size="large"></ion-icon>
+        </div>
+
+        <!-- home.page.html -->
+
+        <div *ngIf="currentContent === 'alunos'" class="content-center-alunos">
+          <div class="espacamento">
+            <ion-button color="warning" *ngFor="let aluno of alunosData"
+              class="custom-button btn-space ion-activatable ripple-parent custom-parent"
+              (click)="mostrarDadosAluno(aluno)">
+              <ion-icon size="large" name="person-circle" class="icon-background"></ion-icon>
+              <span class="texto-span-user w-75 text-center">{{ aluno.nome }}</span>
+            </ion-button>
+          </div>
+        </div>
+
+
+        <div *ngIf="currentContent === 'funcionarios'" class="content-center-funcionarios">
+          <div class="espacamento">
+            <ion-button color="warning" *ngFor="let funcionario of funcionariosData"
+              class="custom-button btn-space ion-activatable ripple-parent custom-parent"
+              (click)="mostrarDadosFuncionarios(funcionario)">
+              <ion-icon size="large" name="person-circle" class="icon-background"></ion-icon>
+              <span class="texto-span-user w-75 text-center">{{ funcionario.nome }}</span>
+            </ion-button>
+          </div>
+        </div>
+
+        <div *ngIf="currentContent === 'entradas'" class="content-center-entradas">
+          <div class="conteudo-planos">
+            <ion-grid>
+
+              <ion-row *ngFor="let log of logsData" class="data-row btn-space">
+
+                <ion-col size="12" class="ion-text-center  italico dado-entrada ion-text-center2">
+                  <ion-card class="preto">
+                    <ion-card-content class="branco">
+                      {{ log.hora }}
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+
+                <ion-col size="12" class="ion-text-center italico dado-entrada ion-text-center2">
+                  <ion-card>
+                    <ion-card-content>
+                      {{ log.CPF }}
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+
+                <ion-col size="12" class="ion-text-center italico dado-entrada ion-text-center2">
+                  <ion-card>
+                    <ion-card-content>
+                      <strong>{{ log.nome }}</strong>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+
+
+
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+
+
+        <!-- home.page.html -->
+
+        <div *ngIf="currentContent === 'planos'" class="content-center">
+          <div class="conteudo-planos">
+            <ion-grid>
+              <ion-row *ngFor="let plano of planosData" class="data-row">
+                <ion-col class="ion-text-center ion-text-center2">
+                  <ion-card>
+                    <ion-card-header>
+                      {{ plano.nome }}
+                    </ion-card-header>
+                    <ion-card-content>
+                      {{ plano.duracao_meses }} meses - R$ {{ plano.preco }}
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <h2 class="cor-branca">Detalhes</h2>
+
+            <ion-grid class="beneficios-grid">
+              <ion-row *ngFor="let plano of planosData" class="beneficios-row">
+                <ion-col class="beneficios-col tamanho ion-text-center ion-text-center2">
+                  <ion-card>
+                    <ion-card-header>
+                      {{ plano.nome }}
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center italico ion-text-center2">
+                      {{ plano.beneficios }}
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+
+
+      </ion-content>
+    </div>
+  </div>
+
+</ion-app>

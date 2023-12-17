@@ -1,20 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="text-center ion-text-center">Sistema de Gerenciamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="ion-padding" class="ion-text-center">
+  <div class="conteudo">
+    <ion-card class="login-card">
+      <div class="circle"></div>
+      <ion-card-header>
+        <ion-card-title class="text-center">Login</ion-card-title>
+      </ion-card-header>
+    
+      <div class="conteudo-form">
+        <form (ngSubmit)="loginFormSubmit()" #loginForm="ngForm">
+          <ion-item class="input">
+            <ion-label position="floating">Nome de usuário</ion-label>
+            <ion-input [(ngModel)]="username" name="username" type="text" required></ion-input>
+          </ion-item>
+    
+          <ion-item class="input">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input [(ngModel)]="password" fill="outline" name="password" type="password" required></ion-input>
+          </ion-item>
+    
+          <ion-button expand="full" class="botao" type="submit">Login</ion-button>
+        </form>
+      </div>
+    </ion-card>
   </div>
+
 </ion-content>

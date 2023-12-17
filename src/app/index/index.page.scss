@@ -1,0 +1,421 @@
+ion-menu::part(backdrop) {
+  background-color: #343a40
+}
+
+.menu{
+  font-size: 22px;
+  overflow-y: hidden;
+}
+
+ion-content {
+  --background-position: center 0;
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px #343a40;
+}
+
+ion-title {
+  text-align: center;
+}
+
+.ion-text-center {
+  text-align: center;
+  color: #fff;
+}
+
+
+ion-menu {
+  height: 100%;
+}
+
+ion-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-item {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #333333;
+}
+
+ion-item:last-child {
+  border-bottom: none;
+}
+
+ion-item {
+  --min-height: 70px;
+}
+
+ion-label.ion-padding-top {
+  padding-top: 10px;
+}
+
+#main-content ion-content .main .inner-scroll {
+  margin: 0;
+  padding: 0;
+  // background: url('/assets/t3.jpg');
+  // background-size: cover;
+  background-position: center;
+}
+
+ion-content {
+  width: 100%;
+  height: 100%;
+}
+
+
+.home-container {
+  position: relative;
+  background: url('/assets/t3.jpg') fixed; 
+  background-position: center 0;
+  background-attachment: fixed;
+  background-size: cover;
+  height: calc(100vh );
+  opacity: 0.5;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-icon {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.fundo {
+  background-color: #343a40;
+}
+
+/* home.page.scss */
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('/assets/t3.jpg') fixed; 
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh );
+  opacity: 0.5;
+}
+
+.content-center-entradas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/t3.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+
+.data-row,
+.beneficios-row {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
+
+ion-grid {
+  min-width: 95%;
+  padding: 10px;
+}
+
+.alert-label {
+  color: black;
+}
+
+
+.header-col,
+.footer-col,
+.ion-col,
+.ion-row,
+.beneficios-col {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  vertical-align: middle;
+}
+
+.footer-col,
+.beneficios-col {
+  background-color: #f5f5f5;
+}
+
+.conteudo-planos {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  overflow-y: auto;
+  margin-top: 60px;
+}
+
+.ion-text-center2 {
+  background-color: #f5f5f5;
+  padding: 10px;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.tamanho {
+  height: 100%;
+}
+
+.italico {
+  font-style: italic;
+  color:black;
+  vertical-align: middle;
+
+}
+
+.dado-entrada {
+  font-size: 12px;
+}
+
+.titulo{
+  text-align: center;
+  margin-right: auto;
+}
+
+.content-center-funcionarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 20;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/t3.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.conteudo-funcionarios {
+
+  min-width: 1200px;
+  height: 100%;
+}
+
+
+.content-center-alunos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 20;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/t3.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.conteudo-alunos {
+  overflow-x: auto;
+  min-width: 1200px;
+  height: 100%;
+}
+
+.grid-alunos {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.conteudo-alunos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-alunos {
+  flex: 1;
+  overflow: auto;
+}
+
+.ion-grid-alunos {
+  height: 100%;
+}
+
+
+.conteudo-alunos {
+  width: 100%;
+  /* Ocupa 100% da largura da página */
+}
+
+.grid-alunos {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Adiciona flex-direction para que as linhas se ajustem à altura */
+  height: 100%;
+  /* Ocupa 100% da altura da página */
+}
+
+.ion-grid-alunos {
+  width: 100%;
+  height: 100%;
+  /* Ocupa 100% da altura da página */
+}
+
+.data-row {
+  border-bottom: 1px solid #ccc;
+  flex: 1;
+  /* Ajusta a altura da linha para ocupar o espaço disponível */
+}
+
+.header-col,
+.dado-entrada {
+  padding: 10px;
+  text-align: center;
+}
+
+
+.italico {
+  font-style: italic;
+}
+
+.custom-button {
+  display: flex;
+  align-items: flex-end;
+  background-color: #333333;
+  justify-content: center;
+  color: #f5f5f5;
+}
+
+.icon-background {
+  padding: 2px;
+  margin-right: auto;
+  width: 20px;
+  height: 20px;
+}
+.texto-span-user{
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.text-center {
+  margin-left: 8px;
+  /* Adicione margem à esquerda para separar o ícone do texto */
+}
+
+.titulo {
+  font-style: oblique;
+  margin-right: auto;
+}
+
+.custom-alert {
+  --ion-background-color: navy;
+  --ion-color-base: white;
+  --ion-color-button-base: white;
+}
+
+.espacamento {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow-y: auto;
+  width: 90%;
+  overflow-x: hidden;
+}
+
+.btn-space {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.cor-branca {
+  color: white;
+  text-align: center;
+}
+
+.preto {
+  background-color: black;
+}
+
+.branco {
+  color: white;
+}
+
+.azul-claro {
+  background-color: #343a40;
+}
+
+.w-75{
+  width: 85%;
+}
+
+
+ion-menu ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #343a40;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Definindo a largura para ocupar toda a largura disponível */
+}
+
+ion-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.menu-lateral{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
