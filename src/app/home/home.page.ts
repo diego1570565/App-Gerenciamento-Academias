@@ -15,7 +15,7 @@ export class HomePage {
 
   loginFormSubmit() {
     // Envia os dados para a API
-    const apiUrl = 'https://www.cavalopretosistemas.com.br/academia/API/dados_login.php';
+    const apiUrl = 'https://www.#######.com.br/academia/API/dados_login.php';
     const userParam = encodeURIComponent(this.username);
     const senhaParam = encodeURIComponent(this.password);
     const apiEndpoint = `${apiUrl}?user=${userParam}&senha=${senhaParam}`;
