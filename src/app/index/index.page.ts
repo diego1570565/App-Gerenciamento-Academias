@@ -40,7 +40,7 @@ export class IndexPage implements OnInit {
 
   fetchFuncionariosData() {
     const storedUsername = sessionStorage.getItem('username');
-    const apiUrl = 'https://www.cavalopretosistemas.com.br/academia/API/buscar_dados_funcionarios.php?db=' + storedUsername;
+    const apiUrl = 'https://www.#######.com.br/academia/API/buscar_dados_funcionarios.php?db=' + storedUsername;
 
     this.http.get<any[]>(apiUrl).subscribe((data) => {
       this.funcionariosData = data;
@@ -50,7 +50,7 @@ export class IndexPage implements OnInit {
 
   fetchPlanosData() {
     const storedUsername = sessionStorage.getItem('username');
-    const apiUrl = 'https://www.cavalopretosistemas.com.br/academia/API/buscar_dados_planos.php?db=' + storedUsername;
+    const apiUrl = 'https://www.#######.com.br/academia/API/buscar_dados_planos.php?db=' + storedUsername;
 
     this.http.get<any[]>(apiUrl).subscribe((data) => {
       this.planosData = data;
@@ -59,7 +59,7 @@ export class IndexPage implements OnInit {
 
   fetchLogsData() {
     const storedUsername = sessionStorage.getItem('username');
-    const apiUrl = 'https://www.cavalopretosistemas.com.br/academia/API/buscar_dados_entradas.php?db=' + storedUsername ;
+    const apiUrl = 'https://www.#######.com.br/academia/API/buscar_dados_entradas.php?db=' + storedUsername ;
 
     this.http.get<any[]>(apiUrl).subscribe((data) => {
       this.logsData = data;
@@ -68,7 +68,7 @@ export class IndexPage implements OnInit {
 
   fetchAlunosData() {
     const storedUsername = sessionStorage.getItem('username');
-    const apiUrl = 'https://www.cavalopretosistemas.com.br/academia/API/buscar_dados_alunos.php?db=' + storedUsername;
+    const apiUrl = 'https://www.#######.com.br/academia/API/buscar_dados_alunos.php?db=' + storedUsername;
 
     this.http.get<any[]>(apiUrl).subscribe((data) => {
       this.alunosData = data;
